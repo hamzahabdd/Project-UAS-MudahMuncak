@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Admin</title>
+</head>
+<body>
+  <aside aria-label="Sidebar Admin">
+    <nav aria-label="Menu Admin">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="#daftar-permintaan">Daftar Permintaan</a></li>
+        <li><a href="#riwayat">Riwayat</a></li>
+        <li><a href="#aturan">Aturan</a></li>
+      </ul>
+    </nav>
+
+    <p>Username</p>
+  </aside>
+
+  <main>
+    <section id="daftar-permintaan" aria-labelledby="permintaan-heading">
+      <h1 id="permintaan-heading">Daftar Permintaan</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Foto</th>
+            <th scope="col">ID</th>
+            <th scope="col">Penggunggah</th>
+            <th scope="col">Tanggal</th>
+            <th scope="col">Gunung</th>
+            <th scope="col">Persetujuan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Foto unggahan</td>
+            <td>#1628</td>
+            <td>Malik Arjayana</td>
+            <td><time datetime="2009-11-01">01/11/2009</time></td>
+            <td>Rinjani</td>
+            <td>
+              <button type="button">Lihat</button>
+              <button type="button">Disetujui</button>
+              <button type="button">Tolak</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <dialog aria-labelledby="detail-permintaan-id">
+        <h2 id="detail-permintaan-id">ID: #1628</h2>
+        <dl>
+          <dt>Deskripsi</dt>
+          <dd>Detail laporan pendakian pengguna.</dd>
+
+          <dt>Penggunggah</dt>
+          <dd>Malik Arjayana</dd>
+
+          <dt>Gunung</dt>
+          <dd>Rinjani</dd>
+
+          <dt>Tanggal</dt>
+          <dd><time datetime="2009-11-01">01/11/2009</time></dd>
+
+          <dt>Jam</dt>
+          <dd><time datetime="13:01">13:01 PM</time></dd>
+        </dl>
+
+        <form method="dialog">
+          <div>
+            <label for="status-verifikasi">Status</label>
+            <select id="status-verifikasi" name="status">
+              <option value="menunggu" selected>Menunggu</option>
+              <option value="disetujui">Disetujui</option>
+              <option value="ditolak">Ditolak</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="alasan-penolakan">Alasan Penolakan</label>
+            <textarea id="alasan-penolakan" name="alasan_penolakan"></textarea>
+          </div>
+
+          <button type="submit">Simpan</button>
+          <button type="button">Batal</button>
+        </form>
+      </dialog>
+    </section>
+
+    <section id="riwayat" aria-labelledby="riwayat-admin-heading">
+      <h2 id="riwayat-admin-heading">Riwayat</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Foto</th>
+            <th scope="col">ID</th>
+            <th scope="col">Penggunggah</th>
+            <th scope="col">Tanggal</th>
+            <th scope="col">Gunung</th>
+            <th scope="col">Persetujuan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Foto unggahan</td>
+            <td>#1628</td>
+            <td>Malik Arjayana</td>
+            <td><time datetime="2009-11-01">01/11/2009</time></td>
+            <td>Rinjani</td>
+            <td>Disetujui</td>
+          </tr>
+          <tr>
+            <td>Foto unggahan</td>
+            <td>#1628</td>
+            <td>Malik Arjayana</td>
+            <td><time datetime="2009-11-01">01/11/2009</time></td>
+            <td>Rinjani</td>
+            <td>Ditolak</td>
+          </tr>
+          <tr>
+            <td>Foto unggahan</td>
+            <td>#1628</td>
+            <td>Malik Arjayana</td>
+            <td><time datetime="2009-11-01">01/11/2009</time></td>
+            <td>Rinjani</td>
+            <td>Disetujui</td>
+          </tr>
+          <tr>
+            <td>Foto unggahan</td>
+            <td>#1628</td>
+            <td>Malik Arjayana</td>
+            <td><time datetime="2009-11-01">01/11/2009</time></td>
+            <td>Rinjani</td>
+            <td>Disetujui</td>
+          </tr>
+          <tr>
+            <td>Foto unggahan</td>
+            <td>#1628</td>
+            <td>Malik Arjayana</td>
+            <td><time datetime="2009-11-01">01/11/2009</time></td>
+            <td>Rinjani</td>
+            <td>Ditolak</td>
+          </tr>
+          <tr>
+            <td>Foto unggahan</td>
+            <td>#1628</td>
+            <td>Malik Arjayana</td>
+            <td><time datetime="2009-11-01">01/11/2009</time></td>
+            <td>Rinjani</td>
+            <td>Ditolak</td>
+          </tr>
+          <tr>
+            <td>Foto unggahan</td>
+            <td>#1628</td>
+            <td>Malik Arjayana</td>
+            <td><time datetime="2009-11-01">01/11/2009</time></td>
+            <td>Rinjani</td>
+            <td>Disetujui</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <section aria-label="Statistik Persetujuan Triwulan">
+        <article>
+          <h3>Januari - Maret</h3>
+          <p>Disetujui: <data value="98.3">98.3%</data> | Ditolak: <data value="1.7">1.7%</data></p>
+        </article>
+
+        <article>
+          <h3>Juli - September</h3>
+          <p>Disetujui: <data value="97.7">97.7%</data> | Ditolak: <data value="2.3">2.3%</data></p>
+        </article>
+
+        <article>
+          <h3>April - Juni</h3>
+          <p>Disetujui: <data value="87.9">87.9%</data> | Ditolak: <data value="18.1">18.1%</data></p>
+        </article>
+
+        <article>
+          <h3>Oktober - Desember</h3>
+          <p>Disetujui: <data value="76.1">76.1%</data> | Ditolak: <data value="23.9">23.9%</data></p>
+        </article>
+
+        <div aria-label="Keterangan">
+          <span>Disetujui</span>
+          <span>Ditolak</span>
+        </div>
+      </section>
+    </section>
+
+    <section id="aturan" aria-labelledby="aturan-admin-heading">
+      <h2 id="aturan-admin-heading">Aturan &amp; Batasan</h2>
+
+      <section aria-labelledby="aturan-patuh-heading">
+        <h3 id="aturan-patuh-heading">Aturan yang harus dipatuhi</h3>
+        <ul>
+          <li>Mengelola dan memverifikasi data sesuai tugas yang diberikan.</li>
+          <li>Membalas bantuan atau pertanyaan pengguna.</li>
+          <li>Melihat dan mengelola laporan harian.</li>
+          <li>Memberikan alasan Penolakan yang Jelas.</li>
+          <li>Menyelesaikan proses validasi sesuai tenggat waktu yang ditetapkan.</li>
+          <li>Setiap tindakan persetujuan atau penolakan wajib dilakukan menggunakan akun masing-masing agar tercatat dalam riwayat aktivitas sistem (log).</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="batasan-heading">
+        <h3 id="batasan-heading">Batasan</h3>
+        <ul>
+          <li>Dilarang keras menyebarkan, menyalin, mengunduh, atau memotret data sensitif pengguna.</li>
+          <li>Admin hanya diberi akses pada modul verifikasi dan dilarang mengubah pengaturan sistem, database utama, atau hak akses pengguna lain tanpa izin.</li>
+          <li>Tidak diperbolehkan memanipulasi data sensitif pengguna tanpa persetujuan atau mekanisme pengajuan revisi resmi dari pemilik data.</li>
+          <li>Tidak diperkenankan menambah admin baru, mengubah peran pengguna lain.</li>
+          <li><strong>Dilarang Berbagi Akun!!!</strong> Akses ini bersifat personal dan tidak boleh dipindahtangankan kepada orang lain.</li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p><small>&copy; 2026 [Nama Website]. Semua Hak Cipta Dilindungi.</small></p>
+  </footer>
+</body>
+</html>
