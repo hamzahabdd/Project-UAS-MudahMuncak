@@ -7,16 +7,35 @@ document.addEventListener("click", (event) => {
 
   const cells = trigger.closest("tr")?.cells;
   if (cells) {
-    document.querySelector("#detail-id").textContent = cells[1].textContent.trim();
-    document.querySelector("#detail-pengunggah").textContent = cells[2].textContent.trim();
-    document.querySelector("#detail-gunung").textContent = cells[4].textContent.trim();
-    document.querySelector("#detail-tanggal").textContent = cells[3].textContent.trim();
+    const detailValues = {
+      "#detail-id": cells[1]?.textContent.trim(),
+      "#detail-pengunggah": cells[2]?.textContent.trim(),
+      "#detail-gunung": cells[4]?.textContent.trim(),
+      "#detail-tanggal": cells[3]?.textContent.trim(),
+    };
+
+    Object.entries(detailValues).forEach(([selector, value]) => {
+      const element = document.querySelector(selector);
+      if (element && value) element.textContent = value;
+    });
   }
 
-  detailDialog.showModal();
-  document.querySelector("#detail-permintaan-id").focus();
+  if (typeof detailDialog.showModal === "function") {
+    detailDialog.showModal();
+  } else {
+    detailDialog.setAttribute("open", "");
+  }
+
+    document.querySelector("#detail-permintaan-id")?.focus();
 });
 
 document.querySelector("#batalDialogBtn")?.addEventListener("click", () => {
-  detailDialog?.close();
+  if (!detailDialog) return;
+
+  if (typeof detailDialog.close === "function") {
+    detailDialog.close();
+  } else {
+    detailDialog.removeAttribute("open");
+  }
 });
+
