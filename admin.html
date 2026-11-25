@@ -71,39 +71,57 @@
           </table>
         </div>
         <dialog id="detailDialog" class="admin-dialog" aria-labelledby="detail-permintaan-id">
-          <h2 id="detail-permintaan-id">ID: #1628</h2>
-          <dl class="admin-detail-list">
-            <dt>Deskripsi</dt>
-            <dd>Detail laporan pendakian pengguna.</dd>
-            <dt>Penggunggah</dt>
-            <dd>Malik Arjayana</dd>
-            <dt>Gunung</dt>
-            <dd>Rinjani</dd>
-            <dt>Tanggal</dt>
-            <dd><time datetime="2009-11-01">01/11/2009</time></dd>
-            <dt>Jam</dt>
-            <dd><time datetime="13:01">13:01 PM</time></dd>
-          </dl>
-          <form method="dialog" id="verifikasiForm">
-            <div class="mb-3">
-              <label for="status-verifikasi" class="form-label">Status</label>
-              <select id="status-verifikasi" name="status" class="form-select">
-                <option value="menunggu" selected>Menunggu</option>
-                <option value="disetujui">Disetujui</option>
-                <option value="ditolak">Ditolak</option>
-              </select>
+          <header class="admin-dialog-header">
+            <h2 id="detail-permintaan-id" tabindex="-1">ID: <span id="detail-id">#1628</span></h2>
+          </header>
+
+          <div class="admin-dialog-content">
+            <div class="admin-detail-photo" role="img" aria-label="Foto pendakian belum tersedia">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="m3 18 6-7 4 4 3-3 5 6H3Z"></path>
+                <circle cx="17" cy="7" r="2"></circle>
+              </svg>
+              <span>Foto pendakian</span>
             </div>
 
-            <div class="mb-3">
-              <label for="alasan-penolakan" class="form-label">Alasan Penolakan</label>
-              <textarea id="alasan-penolakan" name="alasan_penolakan" class="form-control" rows="3"></textarea>
-            </div>
+            <h3 class="admin-detail-heading">Deskripsi</h3>
+            <p class="admin-detail-description">Detail laporan pendakian pengguna.</p>
 
-            <div class="d-flex justify-content-end gap-2">
-              <button type="submit" class="btn btn-primary">Simpan</button>
-              <button type="button" id="batalDialogBtn" class="btn btn-secondary">Batal</button>
-            </div>
-          </form>
+            <dl class="admin-detail-list">
+              <dt>Pengunggah</dt>
+              <dd id="detail-pengunggah">Malik Arjayana</dd>
+
+              <dt>Gunung</dt>
+              <dd id="detail-gunung">Rinjani</dd>
+
+              <dt>Tanggal</dt>
+              <dd><time id="detail-tanggal" datetime="2009-11-01">01/11/2009</time></dd>
+
+              <dt>Jam</dt>
+              <dd><time datetime="13:01">13:01 PM</time></dd>
+            </dl>
+
+            <form method="dialog" id="verifikasiForm" class="admin-verification-form">
+              <div class="admin-form-row">
+                <label for="status-verifikasi">Status</label>
+                <select id="status-verifikasi" name="status" class="form-select">
+                  <option value="menunggu" selected>Menunggu</option>
+                  <option value="disetujui">Disetujui</option>
+                  <option value="ditolak">Ditolak</option>
+                </select>
+              </div>
+
+              <div class="admin-rejection-field">
+                <label for="alasan-penolakan">Alasan Penolakan</label>
+                <textarea id="alasan-penolakan" name="alasan_penolakan" class="form-control" rows="3" placeholder="-"></textarea>
+              </div>
+
+              <div class="admin-dialog-actions">
+                <button type="submit" class="btn btn-primary">Simpan</button>
+                <button type="button" id="batalDialogBtn" class="btn btn-secondary">Batal</button>
+              </div>
+            </form>
+          </div>
         </dialog>
       </section>
 
