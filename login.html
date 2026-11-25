@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in - MudahMuncak</title>
+    <!-- Bootstrap 5 Lokal -->
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <!-- Custom CSS Login -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <div class="login-wrapper d-flex align-items-center">
+        <!-- Latar Kurva Gelombang Putih dengan Drop Shadow -->
+        <div class="wave-bg d-none d-lg-block">
+            <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+                <defs>
+                    <filter id="waveShadow" x="-15%" y="0%" width="120%" height="100%">
+                        <feDropShadow dx="-8" dy="4" stdDeviation="10" flood-color="#000000" flood-opacity="0.28" />
+                    </filter>
+                </defs>
+                <path d="M 55,0 C 210,160 110,360 185,435 C 275,525 570,550 420,1000 L 1000,1000 L 1000,0 Z"
+                    fill="#ffffff" filter="url(#waveShadow)" />
+            </svg>
+        </div>
+
+        <!-- Container Form Login -->
+        <div class="container">
+            <div class="row justify-content-center justify-content-lg-end">
+                <div class="col-11 col-sm-8 col-md-6 col-lg-4 me-lg-5">
+                    <div class="login-box text-center p-4 p-lg-3">
+
+                        <h1 class="login-title fw-bold mb-4">Log in</h1>
+
+                        <!-- Alert Pesan Error dari Komponen Bootstrap -->
+                        <div id="loginAlert" class="alert alert-danger py-2 px-3 rounded-pill d-none small"
+                            role="alert">
+                            Username atau password salah!
+                        </div>
+
+                        <!-- Form Login -->
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <input type="text" id="username"
+                                    class="form-control custom-input rounded-pill px-4 py-2"
+                                    placeholder="Username / Email" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="password" id="password"
+                                    class="form-control custom-input rounded-pill px-4 py-2" placeholder="Password"
+                                    required>
+                            </div>
+                            <button type="submit" class="btn btn-login w-100 rounded-pill py-2 fw-semibold mb-4">
+                                Log in
+                            </button>
+                        </form>
+
+                        <p class="sub-text small mb-2">Or sign in with</p>
+
+                        <!-- Tombol Social Login Offline (SVG Bawaan) -->
+                        <div class="d-flex justify-content-center gap-3 mb-4">
+                            <!-- Facebook -->
+                            <button type="button"
+                                class="btn social-btn btn-fb rounded-circle p-0 d-inline-flex align-items-center justify-content-center"
+                                title="Sign in with Facebook" onclick="quickUserLogin()">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                </svg>
+                            </button>
+                            <!-- Google -->
+                            <button type="button"
+                                class="btn social-btn btn-google rounded-circle p-0 d-inline-flex align-items-center justify-content-center"
+                                title="Sign in with Google" onclick="quickUserLogin()">
+                                <svg width="16" height="16" viewBox="0 0 48 48">
+                                    <path fill="#EA4335"
+                                        d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
+                                    <path fill="#4285F4"
+                                        d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" />
+                                    <path fill="#FBBC05"
+                                        d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
+                                    <path fill="#34A853"
+                                        d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <p class="sub-text small mb-0">
+                            Don't have an account?
+                            <a href="#" class="signup-link fw-bold text-decoration-none" data-bs-toggle="modal"
+                                data-bs-target="#infoAkunModal">Sign Up</a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Bootstrap Info Akun Demo -->
+    <div class="modal fade" id="infoAkunModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content rounded-4 border-0 shadow">
+                <div class="modal-header border-0 pb-0">
+                    <h6 class="modal-title fw-bold text-primary">Akun Demo MudahMuncak</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body small">
+                    <p class="mb-2"><strong>Admin (ke admin.html):</strong><br>User: <code>admin</code> | Pass:
+                        <code>admin123</code></p>
+                    <p class="mb-0"><strong>Pengguna (ke index.html):</strong><br>User: <code>user</code> | Pass:
+                        <code>user123</code></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle Lokal -->
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- Logika Login Admin & Pengguna -->
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const loginAlert = document.getElementById('loginAlert');
+
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const userVal = document.getElementById('username').value.trim().toLowerCase();
+            const passVal = document.getElementById('password').value.trim();
+
+            if ((userVal === 'admin' || userVal === 'admin@mudahmuncak.com') && passVal === 'admin123') {
+                localStorage.setItem('userRole', 'admin');
+                localStorage.setItem('username', 'Admin MudahMuncak');
+                window.location.href = 'admin.html';
+            }
+            else if ((userVal === 'user' || userVal === 'user@mudahmuncak.com') && passVal === 'user123') {
+                localStorage.setItem('userRole', 'user');
+                localStorage.setItem('username', 'Pendaki');
+                window.location.href = 'index.html';
+            }
+            else {
+                loginAlert.classList.remove('d-none');
+            }
+        });
+
+        function quickUserLogin() {
+            localStorage.setItem('userRole', 'user');
+            localStorage.setItem('username', 'Pendaki');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+
+</html>

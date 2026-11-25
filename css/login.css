@@ -1,0 +1,116 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+.login-wrapper {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  /* Ganti URL ini dengan gambar lokal jika ada, misal: url('../img/gunung.jpg') */
+  background-image: url('https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: left center;
+}
+
+.wave-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 68%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.wave-bg svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.login-box {
+  position: relative;
+  z-index: 2;
+}
+
+.login-title {
+  color: #93c1e8;
+  font-size: 2.3rem;
+}
+
+.custom-input {
+  background-color: #cbe0f3 !important;
+  border: 2px solid transparent;
+  color: #2c4a66;
+  height: 46px;
+}
+
+.custom-input::placeholder {
+  color: #7ea6cc;
+}
+
+.custom-input:focus {
+  border-color: #93c1e8;
+  box-shadow: 0 0 0 0.2rem rgba(147, 193, 232, 0.25);
+}
+
+.btn-login {
+  background-color: #96c3e8;
+  color: #ffffff;
+  border: none;
+  height: 44px;
+}
+
+.btn-login:hover {
+  background-color: #7cb1de;
+  color: #ffffff;
+}
+
+.sub-text {
+  color: #96c3e8;
+}
+
+.social-btn {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.2s ease;
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+}
+
+.btn-fb {
+  background-color: #1877F2;
+  color: #ffffff;
+}
+
+.btn-fb:hover {
+  background-color: #1464cc;
+  color: #ffffff;
+}
+
+.btn-google {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+}
+
+.signup-link {
+  color: #7bb0df;
+}
+
+.signup-link:hover {
+  text-decoration: underline !important;
+}
+
+/* Tampilan card putih transparan saat dibuka di layar HP/Tablet */
+@media (max-width: 991.98px) {
+  .login-box {
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+}
