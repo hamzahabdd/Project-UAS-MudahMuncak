@@ -1,0 +1,457 @@
+/* Layout Utama & Navigasi */
+.admin-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 1.5rem;
+  background-color: var(--bg-admin-nav);
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: 0 2px 8px rgba(17, 24, 39, 0.08);
+}
+
+.admin-navigation {
+  min-width: 0;
+}
+
+.admin-nav-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.admin-nav-list .nav-link {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.admin-nav-list .nav-link:hover,
+.admin-nav-list .nav-link:active {
+  background-color: var(--bg-admin-nav-active);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.admin-nav-list .nav-link:focus-visible {
+  outline: 2px solid var(--text-main);
+  outline-offset: 2px;
+}
+
+.admin-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-shrink: 0;
+  padding: 0.3rem 0.7rem 0.3rem 0.35rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+.admin-profile-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--bg-admin-nav-active);
+  color: #ffffff;
+}
+
+.admin-profile-icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.admin-username {
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+/* Area Konten */
+.admin-main {
+  flex: 1;
+  padding: 1.5rem 1.25rem 2.5rem;
+}
+
+@media (min-width: 992px) {
+  .admin-main {
+    padding: 2rem 2.25rem;
+  }
+}
+
+.admin-section {
+  margin-bottom: 2.75rem;
+  scroll-margin-top: 7rem;
+}
+
+.admin-page-title {
+  font-size: 1.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.admin-section-title {
+  font-size: 1.4rem;
+  margin-bottom: 1.15rem;
+}
+
+/* Tabel Persetujuan & Riwayat */
+.admin-table {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  min-width: 680px;
+}
+
+.admin-table thead th {
+  background-color: var(--bg-peach-header);
+  color: var(--text-main);
+  font-weight: 700;
+  text-align: center;
+  padding: 0.75rem 0.85rem;
+  border-top: 1.5px solid var(--border-dark);
+  border-bottom: 1.5px solid var(--border-dark);
+}
+
+.admin-table thead th:first-child {
+  border-left: 1.5px solid var(--border-dark);
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+}
+
+.admin-table thead th:last-child {
+  border-right: 1.5px solid var(--border-dark);
+  border-top-right-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+}
+
+.admin-table tbody tr td {
+  background-color: var(--bg-peach-row);
+  text-align: center;
+  padding: 0.65rem 0.85rem;
+  border-top: 1.5px solid var(--border-dark);
+  border-bottom: 1.5px solid var(--border-dark);
+  transition: background-color 0.15s ease;
+}
+
+.admin-table tbody tr td:first-child {
+  border-left: 1.5px solid var(--border-dark);
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+}
+
+.admin-table tbody tr td:last-child {
+  border-right: 1.5px solid var(--border-dark);
+  border-top-right-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+}
+
+.admin-table tbody tr:hover td {
+  background-color: var(--bg-peach-hover);
+}
+
+/* Thumbnail Foto */
+.photo-thumb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 46px;
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+}
+
+.photo-thumb svg {
+  width: 34px;
+  height: 26px;
+}
+
+/* Tombol Aksi & Badge Status */
+.action-btn-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.btn-lihat,
+.btn-setuju,
+.btn-tolak,
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.15s ease;
+}
+
+.btn-lihat:active,
+.btn-setuju:active,
+.btn-tolak:active {
+  transform: scale(0.97);
+}
+
+.btn-lihat {
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid #9ca3af;
+}
+
+.btn-lihat:hover {
+  background-color: #f3f4f6;
+}
+
+.btn-setuju,
+.status-disetujui {
+  background-color: var(--color-approved);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-setuju:hover {
+  background-color: var(--color-approved-hover);
+}
+
+.btn-tolak,
+.status-ditolak {
+  background-color: var(--color-rejected);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-tolak:hover {
+  background-color: var(--color-rejected-hover);
+}
+
+.status-badge {
+  cursor: default;
+}
+
+/* Dialog Detail Permintaan */
+.admin-dialog {
+  width: min(92vw, 480px);
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  background-color: var(--bg-peach-row);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.admin-dialog::backdrop {
+  background-color: rgba(17, 24, 39, 0.32);
+}
+
+.admin-dialog-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.admin-dialog-header h2 {
+  display: inline-block;
+  margin: 0;
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-admin-nav-active);
+  color: #ffffff;
+  font-size: 1.05rem;
+}
+
+.admin-dialog-content {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.admin-detail-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: min(100%, 220px);
+  min-height: 130px;
+  margin: 0 auto 1.1rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.admin-detail-photo svg {
+  width: 52px;
+  height: 42px;
+}
+
+.admin-detail-heading {
+  margin-bottom: 0.45rem;
+  font-size: 1rem;
+}
+
+.admin-detail-description {
+  margin-bottom: 1rem;
+}
+
+.admin-detail-list {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 0.4rem 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.admin-detail-list dt {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.admin-detail-list dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Statistik Triwulan & Keterangan */
+.stats-panel {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+@media (min-width: 1200px) {
+  .stats-panel {
+    margin-top: 8px;
+    height: calc(100% - 11px);
+  }
+}
+
+.quarter-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.65rem;
+}
+
+.pie-canvas {
+  display: block;
+  margin: 0 auto 0.65rem;
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+}
+
+.quarter-values {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.legend-box {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.65rem 0.9rem;
+  background-color: #f3f4f6;
+  border-radius: var(--radius-sm);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 28px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.legend-approved {
+  background-color: var(--color-approved);
+}
+
+.legend-rejected {
+  background-color: var(--color-rejected);
+}
+
+/* Aturan & Batasan */
+.rules-card {
+  background-color: var(--bg-rules-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 1.35rem;
+  height: 100%;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(17, 24, 39, 0.16);
+}
+
+.rules-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.85rem;
+  color: #ffffff;
+}
+
+.rules-card li {
+  margin-bottom: 0.45rem;
+}
+
+/* Footer */
+.admin-footer {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  color: var(--text-muted);
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-soft);
+}
+
+@media (max-width: 575.98px) {
+  .admin-topbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.35rem;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .admin-navigation {
+    width: 100%;
+  }
+
+  .admin-nav-list .nav-link {
+    padding: 0.45rem 0.7rem;
+  }
+
+  .admin-profile {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .admin-nav-list .nav-link {
+    padding: 0.4rem 0.55rem;
+    font-size: 0.9rem;
+  }
+}
