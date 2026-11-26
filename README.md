@@ -12,8 +12,9 @@
 9. css/login.css - Untuk tampilan login
 10. css/profile.css - Untuk tampilan profile
 
-# Cara Menjalankan
-Buka folder proyek ini di VS Code.
-Cari file bernama index.html.
-Klik dua kali pada file index.html tersebut.
-File akan otomatis terbuka dan berjalan langsung di browser (peramban) pilihan Anda (google chrome, microsoft edge)
+# Cara Menjalankan Proyek
+1. Salin URL repositori pada Code(HTTPS) di github.
+2. Buka VS Code, lalu tekan Ctrl+Shift+P (Windows/Linux) atau Cmd+Shift+P (Mac), atau buka tab Source Control di bilah sisi kiri.
+3. Pilih Git: Clone atau Clone Repository.
+4. Tempel URL repositori dan tekan Enter.
+5. Pilih folder lokal tujuan penyimpanan, lalu klik Open saat proses selesai untuk membuka proyek.
