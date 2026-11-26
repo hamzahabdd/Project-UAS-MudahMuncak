@@ -10,7 +10,7 @@
 7. css/base.css - Pengaturan dasar dan variabel CSS
 8. css/components.css - Tampilan header, tombol, kartu, dan layout
 9. css/login.css - Untuk tampilan login
-10. 9. css/profile.css - Untuk tampilan profile
+10. css/profile.css - Untuk tampilan profile
 
 # Cara Menjalankan
 Buka folder proyek ini di VS Code.
