@@ -466,12 +466,11 @@
   margin-bottom: 0.45rem;
 }
 
-/* Footer */
-.admin-footer {
+.footer {
   padding: 1rem 1.5rem;
   text-align: center;
   color: var(--text-muted);
-  background-color: var(--bg-surface);
+  background-color: var(--bg-admin-nav);
   border-top: 1px solid var(--border-soft);
 }
 
